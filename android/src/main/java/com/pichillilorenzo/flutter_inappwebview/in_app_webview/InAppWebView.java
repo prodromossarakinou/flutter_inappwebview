@@ -277,7 +277,7 @@ final public class InAppWebView extends InputAwareWebView implements InAppWebVie
     settings.setAllowUniversalAccessFromFileURLs(options.allowUniversalAccessFromFileURLs);
     setCacheEnabled(options.cacheEnabled);
     if (options.appCachePath != null && !options.appCachePath.isEmpty() && options.cacheEnabled)
-      settings?.setAppCachePath(options.appCachePath);
+//      settings.setAppCachePath(options.appCachePath);
     settings.setBlockNetworkImage(options.blockNetworkImage);
     settings.setBlockNetworkLoads(options.blockNetworkLoads);
     if (options.cacheMode != null)
@@ -491,7 +491,7 @@ final public class InAppWebView extends InputAwareWebView implements InAppWebVie
 
       // Disable caching
       settings.setCacheMode(WebSettings.LOAD_NO_CACHE);
-      settings?.setAppCacheEnabled(false);
+//      settings.setAppCacheEnabled(false);
       clearHistory();
       clearCache(true);
 
@@ -501,7 +501,7 @@ final public class InAppWebView extends InputAwareWebView implements InAppWebVie
       settings.setSaveFormData(false);
     } else {
       settings.setCacheMode(WebSettings.LOAD_DEFAULT);
-      settings?.setAppCacheEnabled(true);
+//      settings.setAppCacheEnabled(true);
       settings.setSavePassword(true);
       settings.setSaveFormData(true);
     }
@@ -512,13 +512,13 @@ final public class InAppWebView extends InputAwareWebView implements InAppWebVie
     if (enabled) {
       Context ctx = getContext();
       if (ctx != null) {
-        settings?.setAppCachePath(ctx.getCacheDir().getAbsolutePath());
+//        settings.setAppCachePath(ctx.getCacheDir().getAbsolutePath());
         settings.setCacheMode(WebSettings.LOAD_DEFAULT);
-        settings?.setAppCacheEnabled(true);
+//        settings.setAppCacheEnabled(true);
       }
     } else {
       settings.setCacheMode(WebSettings.LOAD_NO_CACHE);
-      settings?.setAppCacheEnabled(false);
+//      settings.setAppCacheEnabled(false);
     }
   }
 
@@ -764,7 +764,7 @@ final public class InAppWebView extends InputAwareWebView implements InAppWebVie
       setCacheEnabled(newOptions.cacheEnabled);
 
     if (newOptionsMap.get("appCachePath") != null && (options.appCachePath == null || !options.appCachePath.equals(newOptions.appCachePath)))
-      settings?.setAppCachePath(newOptions.appCachePath);
+//      settings.setAppCachePath(newOptions.appCachePath);
 
     if (newOptionsMap.get("blockNetworkImage") != null && options.blockNetworkImage != newOptions.blockNetworkImage)
       settings.setBlockNetworkImage(newOptions.blockNetworkImage);
